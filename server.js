@@ -75,4 +75,8 @@ app.post('/books', auth, async (req, res) => {
   res.status(201).json({ id, nome, preco });
 });
 
-app.listen(3000, () => console.log('✅ Servidor ON na porta 3000'));
+if (require.main === module) {
+  app.listen(3000, () => console.log('✅ Servidor ON na porta 3000'));
+}
+
+module.exports = app;
